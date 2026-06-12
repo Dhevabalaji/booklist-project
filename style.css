@@ -126,7 +126,7 @@ main {
   gap: 12px;
   margin-bottom: 14px;
 }
-@media (max-width: 520px) {
+@media (max-width: 120px) {
   .form-grid { grid-template-columns: 1fr; }
 }
 input, select {

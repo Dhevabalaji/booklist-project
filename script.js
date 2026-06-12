@@ -50,7 +50,7 @@ function renderBooks(books) {
         <p><span class="label">Year</span>   ${book.year}</p>
       </div>
       <div class="book-actions">
-        <button class="edit-btn"   onclick="startEdit(${book.id}, '${escJs(book.title)}', '${escJs(book.author)}', '${escJs(book.genre)}', ${book.year})">✏️ Edit</button>
+        <button class="edit-btn"   onclick="startEdit(${book.id}, '${escJs(book.title)}', '${escJs(book.author)}', '${escJs(book.genre)}', ${book.year})">Edit</button>
         <button class="delete-btn" onclick="deleteBook(${book.id}, '${escJs(book.title)}')">Delete</button>
       </div>
     `;
