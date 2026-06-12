@@ -3,23 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book List</title>
+  <title>Book List Manager</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
     <h1>Book List Manager</h1>
+    <p class="subtitle">Your personal reading collection</p>
   </header>
   <main>
+    <section class="stats-bar" id="statsBar">
+      <div class="stat-item"><span id="statTotal">0</span><label>Total Books</label></div>
+      <div class="stat-item"><span id="statGenres">0</span><label>Genres</label></div>
+      <div class="stat-item"><span id="statOldest">—</span><label>Oldest Year</label></div>
+      <div class="stat-item"><span id="statNewest">—</span><label>Newest Year</label></div>
+    </section>
     <section class="book-form">
-      <h2>Add New Book</h2>
-      <form id="bookForm">
-        <input type="text" id="title" placeholder="Book Title" required />
-        <input type="text" id="author" placeholder="Author Name" required />
-        <input type="text" id="genre" placeholder="Genre" required />
-        <input type="number" id="year" placeholder="Published Year" required />
-        <button type="submit">Add Book</button>
-      </form>
+      <h2 id="formTitle">Add New Book</h2>
+      <div class="form-grid">
+        <input type="text"   id="title"  placeholder="Book Title"     />
+        <input type="text"   id="author" placeholder="Author Name"    />
+        <input type="text"   id="genre"  placeholder="Genre"          />
+        <input type="number" id="year"   placeholder="Published Year" />
+      </div>
+      <div class="form-actions">
+        <button id="submitBtn" onclick="handleSubmit()">Add Book</button>
+        <button id="cancelBtn" class="cancel-btn hidden" onclick="cancelEdit()">Cancel</button>
+      </div>
+      <p id="formMsg" class="form-msg"></p>
+    </section>
+    <section class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search by title or author…" oninput="handleSearch()"/>
+      <select id="genreFilter" onchange="handleSearch()">
+        <option value="">All Genres</option>
+      </select>
     </section>
     <section class="book-list">
       <h2>Books Collection</h2>
